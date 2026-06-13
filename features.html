@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features — SoftSled</title>
+<meta name="description" content="What SoftSled can do: the full Media Center shell, live & recorded TV, music, pictures and video over RDP, transparent UI compositing, interface sounds and on-the-fly certificate pairing.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23050a16' stroke='%2338b6ff' stroke-width='2'/%3E%3Cpath d='M11 10v12l10-6z' fill='%2338b6ff'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav" id="nav">
+    <a href="index.html" class="brand">
+      <span class="logo"><svg width="30" height="30" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="#38b6ff" stroke-width="2"/><path d="M12 10v12l9-6z" fill="#6ee0ff"/></svg></span>
+      <span>soft<b>sled</b></span>
+    </a>
+    <a class="navlink" href="index.html">Home</a>
+    <a class="navlink" href="getting-started.html">Getting Started</a>
+    <a class="navlink active" href="features.html">Features</a>
+    <a class="navlink" href="how-it-works.html">How It Works</a>
+    <a class="navlink" href="downloads.html">Downloads</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </nav>
+</header>
+
+<section style="padding-top:64px;padding-bottom:24px">
+  <div class="container">
+    <h1 class="section-title"><b>Features</b></h1>
+    <p class="section-lede">SoftSled aims to be a faithful, nearly fully-featured Media Center Extender — not a screen-share. It speaks the same protocols a hardware extender does, so Media Center treats it as the real thing.</p>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="container">
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="ico">🖥️</span>
+        <h3>The real WMC shell</h3>
+        <p>The genuine Media Center 10-foot interface — menus, animations and all — rendered on your extender PC and driven with the keyboard or a remote.</p>
+      </div>
+      <div class="card">
+        <span class="ico">📺</span>
+        <h3>Live &amp; recorded TV</h3>
+        <p>Watch live TV from the host's tuners and play back recorded TV, streamed over RTSP straight from Media Center.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🎬</span>
+        <h3>Video playback</h3>
+        <p>Hardware-accelerated video decode for both <strong>H.264</strong> and <strong>MPEG-2</strong> content delivered by the host.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🎵</span>
+        <h3>Music &amp; audio</h3>
+        <p>Audio streaming with <strong>MP3</strong> and <strong>PCM</strong> playback, plus proper volume and mute control synced with the host.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🖼️</span>
+        <h3>Pictures</h3>
+        <p>Browse and view your photo library through the Media Center pictures experience.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🔊</span>
+        <h3>Interface sounds</h3>
+        <p>The signature Media Center navigation and UI sounds are forwarded and played, so the shell feels exactly like the real thing.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🪟</span>
+        <h3>Transparent UI over video</h3>
+        <p>Media Center's translucent overlays — program info, transport bars — are composited <em>over</em> full-motion video with real per-pixel alpha.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🔐</span>
+        <h3>On-the-fly pairing</h3>
+        <p>SoftSled generates its own extender certificate during setup, so there's no manual certificate wrangling to get paired.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🛠️</span>
+        <h3>One-click host setup</h3>
+        <p>A small admin tool prepares the host PC in seconds — and fully reverses every change if you decide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="panel" style="display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center">
+      <div>
+        <h2 class="section-title" style="font-size:1.9rem">Translucency, done properly</h2>
+        <p style="color:var(--text-dim)">A regular remote-desktop session gives you a flat, opaque picture. SoftSled goes further: it decodes the host's UI as an alpha-bearing layer and composites it on top of the video plane on the GPU. The result is Media Center's trademark glassy overlays sitting correctly over live and recorded video — picture-in-picture, transport controls and program info included.</p>
+        <a class="btn btn-ghost" href="how-it-works.html" style="margin-top:8px">See how it's done →</a>
+      </div>
+      <div>
+        <img class="shot" src="assets/img/wmc-playback.png" alt="Translucent program info overlay over live TV">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Capability matrix</h2>
+    <p class="section-lede">Where things stand today. SoftSled is an active reverse-engineering project, so this evolves — check GitHub for the latest.</p>
+    <table class="tbl">
+      <tr><th style="width:50%">Capability</th><th>Status</th></tr>
+      <tr><td>Full pairing &amp; configuration (with certificate generation)</td><td><span class="tag">Working</span></td></tr>
+      <tr><td>Device Services Lightweight Remoting (<a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dslr">MS-DSLR</a>) protocol</td><td><span class="tag">Working</span></td></tr>
+      <tr><td>Device capability &amp; session negotiation (<a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dspa">MS-DSPA</a> / <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dsmn">MS-DSMN</a>)</td><td><span class="tag">Working</span></td></tr>
+      <tr><td>Media control (<a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/MS-DMCT">MS-DMCT</a>) — play / pause / stop / seek</td><td><span class="tag">Working</span></td></tr>
+      <tr><td>RDP bitmap &amp; remote-rendering shell display</td><td><span class="tag">Working</span></td></tr>
+      <tr><td>Interface sounds</td><td><span class="tag">Working</span></td></tr>
+      <tr><td>Audio playback — MP3, PCM</td><td><span class="tag">Working</span></td></tr>
+      <tr><td>Video playback — MPEG-2, H.264</td><td><span class="tag">Working</span></td></tr>
+      <tr><td>Audio / video sync engine</td><td><span class="tag wip">In progress</span></td></tr>
+      <tr><td>Client-side media transport controls</td><td><span class="tag wip">Planned</span></td></tr>
+      <tr><td>RC6 remote-control forwarding</td><td><span class="tag wip">Planned</span></td></tr>
+      <tr><td>DRM-protected playback</td><td><span class="tag wip">Unlikely</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="container center">
+    <div class="panel">
+      <h2 class="section-title">Want the technical story?</h2>
+      <p class="section-lede center">From UPnP discovery to a patched FreeRDP transport and a hand-written RTSP A/V pipeline — it's a fun rabbit hole.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="how-it-works.html">How It Works &nbsp;→</a>
+        <a class="btn btn-ghost" href="getting-started.html">Getting Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="font-size:1.15rem">soft<b>sled</b></div>
+        <p style="margin:8px 0 0;max-width:340px">An open-source revival of the software Windows Media Center Extender.</p>
+      </div>
+      <div class="foot-links">
+        <a href="getting-started.html">Getting Started</a>
+        <a href="features.html">Features</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="https://github.com/L2N6H5B3/SoftSled2">GitHub</a>
+      </div>
+    </div>
+    <p class="disclaimer">SoftSled is an independent, community open-source project and is not affiliated with, endorsed by, or sponsored by Microsoft. Windows, Windows Media Center, Xbox and related marks are trademarks of Microsoft Corporation, used here for identification only.</p>
+  </div>
+</footer>
+
+</body>
+</html>
