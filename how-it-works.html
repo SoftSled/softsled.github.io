@@ -132,6 +132,7 @@
 
     <h2>6. Compositing it all together</h2>
     <p>Finally, two layers are combined on the GPU: the <strong>video plane</strong> underneath, positioned and scaled to match the picture-in-picture region the host requests, and the <strong>alpha-bearing UI plane</strong> on top. The WPF compositor blends them per-pixel, and the finished frame — translucent Media Center UI floating over live video — lands on your screen. Keyboard and mouse input travel the other way, back over the RDP session, so you drive the host shell as if you were sitting at it.</p>
+    <p>Input isn't limited to a keyboard and mouse. SoftSled also accepts a standard Media Center <strong>RC6 remote</strong>: it reads the raw HID button presses delivered by an <strong>MCE infrared receiver</strong> plugged into the extender PC, maps each one to the matching Media Center remote command, and forwards it to the host over the same channel — so navigation, transport and the green Start button all work just like they do on a hardware extender.</p>
 
     <div class="panel" style="text-align:center">
       <img class="shot" style="max-width:620px;margin:0 auto" src="assets/img/wmc-tv.png" alt="Media Center menus rendered through SoftSled">
