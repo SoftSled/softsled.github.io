@@ -284,6 +284,7 @@ table.tbl code { font-size: 0.85em; }
 }
 .tag.wip { background: rgba(255, 204, 102, 0.14); color: var(--amber); border-color: rgba(255, 204, 102, 0.3); }
 .tag.dim { background: rgba(120,170,255,0.1); color: var(--text-dim); border-color: var(--panel-border); }
+.tag.no { background: rgba(255, 110, 110, 0.12); color: #ff8a8a; border-color: rgba(255, 110, 110, 0.3); }
 
 /* ---------- Download cards ---------- */
 .dl-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin: 8px 0 10px; }

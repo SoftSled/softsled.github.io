@@ -127,6 +127,29 @@
 </section>
 
 <section>
+  <div class="container">
+    <h2 class="section-title">Rendering modes: <b>GDI</b> vs <b>RUI</b></h2>
+    <p class="section-lede">SoftSled can draw the Media Center interface two different ways. In <strong>GDI</strong> mode (RDP rendering) the host paints the UI and streams it to the extender as compressed bitmaps. In <strong>RUI</strong> mode (remote rendering, the same MS-RRSP2 scheme the Xbox 360 used) the host sends drawing instructions and the extender renders them locally — lighter on the network and far smoother, but it needs a low-latency link. The <a href="getting-started.html">first-run wizard</a> picks for you based on your connection: wired enables RUI, Wi-Fi falls back to GDI.</p>
+    <table class="tbl">
+      <tr><th style="width:34%">Capability</th><th>GDI <span class="tag dim" style="font-weight:500">RDP rendering</span></th><th>RUI <span class="tag dim" style="font-weight:500">remote rendering</span></th></tr>
+      <tr><td>Where the UI is drawn</td><td>On the host, streamed as bitmaps</td><td>On the extender, from instructions</td></tr>
+      <tr><td>UI display</td><td><span class="tag">Yes</span></td><td><span class="tag">Yes</span></td></tr>
+      <tr><td>Transparent UI over video</td><td><span class="tag">Yes</span></td><td><span class="tag">Yes</span></td></tr>
+      <tr><td>UI sounds</td><td><span class="tag">Yes</span></td><td><span class="tag">Yes</span></td></tr>
+      <tr><td>UI frame rate</td><td>~15–20 fps</td><td>Up to 60 fps</td></tr>
+      <tr><td>Video playback</td><td><span class="tag">Yes</span></td><td><span class="tag">Yes</span></td></tr>
+      <tr><td>A/V sync</td><td><span class="tag wip">In progress</span></td><td><span class="tag wip">In progress</span></td></tr>
+      <tr><td>Video picture-in-picture</td><td><span class="tag">Yes</span></td><td><span class="tag">Yes</span></td></tr>
+      <tr><td>Video zoom</td><td><span class="tag">Yes</span></td><td><span class="tag no">No</span></td></tr>
+      <tr><td>WMC RC6 remote</td><td><span class="tag">Yes</span></td><td><span class="tag">Yes</span></td></tr>
+      <tr><td>Network bandwidth</td><td>Higher (streamed images)</td><td>Lower (drawing commands)</td></tr>
+      <tr><td>Connection tolerance</td><td>Works over Wi-Fi</td><td>Wired / low-latency recommended</td></tr>
+    </table>
+    <p class="section-lede" style="font-size:0.95rem;color:var(--text-faint);margin-top:18px">Video zoom in RUI mode is an open question — we haven't yet worked out how Media Center communicates the zoom change to a remote-rendered extender, so SoftSled has nothing to act on.</p>
+  </div>
+</section>
+
+<section>
   <div class="container center">
     <div class="panel">
       <h2 class="section-title">Want the technical story?</h2>
