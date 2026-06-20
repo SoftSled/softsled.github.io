@@ -41,7 +41,7 @@
       <tr><th>Role</th><th>Requirements</th></tr>
       <tr>
         <td><strong>Host</strong><br><span class="tag dim">Media Center PC</span></td>
-        <td>Windows&nbsp;7 (any edition with Media Center) <em>or</em> Windows&nbsp;8&nbsp;/&nbsp;8.1 with Windows Media Center installed. This is the PC that has your TV tuners, recordings and media library.</td>
+        <td>Windows&nbsp;7 (any edition with Media Center). This is the PC that has your TV tuners, recordings and media library.<br><span class="tag wip" style="margin-top:8px">Windows 8 / 8.1 — WIP</span> SoftSled <em>should</em> work with Windows&nbsp;8&nbsp;/&nbsp;8.1 + Windows Media Center, but pairing is currently broken there, so Windows&nbsp;7 is recommended for now.</td>
       </tr>
       <tr>
         <td><strong>Extender</strong><br><span class="tag dim">SoftSled PC</span></td>
@@ -54,13 +54,16 @@
 
     <h2>2. Prepare the host PC</h2>
     <p>Media Center will only talk to extenders whose certificate it trusts, and it normally insists on checking a certificate revocation list (CRL) that SoftSled's certificates don't publish. The <strong>SoftSled Host Setup</strong> tool handles both requirements for you. Download it from the <a href="downloads.html">Downloads page</a> and run it <strong>as administrator</strong> on the host PC. It performs two reversible changes:</p>
+    <div class="callout">
+      <strong>Prerequisite:</strong> the Host Setup tool needs <strong>.NET Framework 4.0.3019</strong> (the .NET&nbsp;4 Platform Update) on the host PC. If it isn't already installed, get it from <a href="https://www.microsoft.com/en-au/download/details.aspx?id=17718">Microsoft's download page</a> first.
+    </div>
     <ul>
       <li><strong>Installs the SoftSled CA certificate</strong> into the Local Machine → Trusted Root Certification Authorities store, so Media Center trusts extender certificates SoftSled generates.</li>
-      <li><strong>Replaces <code>Mcx2Prov.exe</code></strong> (in <code>%WINDIR%\ehome</code>) with a patched build that skips the CRL check. A backup of the original is kept automatically, and genuine extenders continue to pair and connect as normal.</li>
+      <li><strong>Patches <code>Mcx2Prov.exe</code> in place</strong> (in <code>%WINDIR%\ehome</code>) so it skips the CRL check. The tool finds and flips the relevant byte in the host's own binary by signature — nothing is downloaded or swapped in — and a backup of the original is kept automatically, so genuine extenders continue to pair and connect as normal.</li>
     </ul>
     <p>The tool detects the current state on launch and offers <strong>Install</strong> / <strong>Re-install</strong> and <strong>Uninstall</strong> buttons, so you can cleanly revert both changes at any time.</p>
     <div class="callout warn">
-      <strong>Heads up:</strong> <code>Mcx2Prov.exe</code> is a protected, TrustedInstaller-owned system file. The Host Setup tool takes ownership, swaps it and keeps a <code>.softsled-backup</code> copy — which is exactly what its Uninstall button restores.
+      <strong>Heads up:</strong> <code>Mcx2Prov.exe</code> is a protected, TrustedInstaller-owned system file. The Host Setup tool takes ownership, patches it in place and keeps a <code>.softsled-backup</code> copy — which is exactly what its Uninstall button restores.
     </div>
 
     <h2>3. First launch — the setup wizard</h2>
